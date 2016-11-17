@@ -57,4 +57,6 @@ trait NestingLevel {
    *  the `Prepared` state, as the `ExplicitDecider` is given the final choice.
    */
   def requestRollback(cause: RollbackCause): Status
+  
+  def awaitCompletionOf(waitFor:NestingLevel, debugInfo: Any): Unit
 }

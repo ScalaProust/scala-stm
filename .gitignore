@@ -8,3 +8,10 @@ src_managed/
 project/boot/
 dep_tests/sbt/project/boot/
 cover/
+
+bin/
+.cache-main
+.worksheet/
+.classpath
+.project
+.settings/

@@ -162,7 +162,9 @@ private[ccstm] class TxnLevelImpl(val txn: InTxnImpl,
   }
 
   private def isRolledBack: Boolean = _state.isInstanceOf[Txn.RolledBack]
-
+  
+  def awaitCompletionOf(waitFor: NestingLevel, debugInfo: Any) = waitFor.asInstanceOf[TxnLevelImpl].awaitCompleted(this, debugInfo)
+  
   /** Blocks until `status.completed`, possibly returning early if `waiter`
    *  has been rolled back.
    */
